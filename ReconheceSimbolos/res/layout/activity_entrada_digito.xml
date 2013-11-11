@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="514dp"
+            android:id="@+id/groupviewDraw"
+            android:gravity="center_vertical|center_horizontal">
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="86dp"
+            android:layout_gravity="center"
+            android:gravity="center_vertical|center_horizontal">
+
+        <Button
+            style="@android:attr/buttonBarButtonStyle"
+            android:layout_width="150sp"
+            android:layout_height="fill_parent"
+            android:text="@string/botao_desenhar"
+            android:id="@+id/buttonDesenhar"
+            android:layout_marginRight="10sp"/>
+
+        <Button
+            style="@android:attr/buttonBarButtonStyle"
+            android:layout_width="150sp"
+            android:layout_height="fill_parent"
+            android:text="@string/botao_forma_matricial"
+            android:id="@+id/buttonFormaMatricial"
+            android:layout_marginRight="10sp"/>
+
+        <Button
+            style="@android:attr/buttonBarButtonStyle"
+            android:layout_width="150sp"
+            android:layout_height="fill_parent"
+            android:text="@string/botao_reconhecer"
+            android:id="@+id/buttonReconhecer"
+            android:layout_marginRight="10sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="left|center_vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                    android:layout_width="150sp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/texto_valor_reconhecido"
+                    />
+
+            <EditText
+                    android:layout_width="106dp"
+                    android:layout_height="fill_parent"
+                    android:inputType="none"
+                    android:id="@+id/editTextValorReconhecido"/>
+
+    </LinearLayout>
+
+</LinearLayout>

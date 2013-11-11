@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Reconhece Simbolos</string>
+    <string name="action_settings">Settings</string>
+    <string name="botao_desenhar">Desenhar</string>
+    <string name="botao_forma_matricial">Forma matricial</string>
+    <string name="botao_reconhecer">Reconhecer</string>
+    <string name="texto_valor_reconhecido">Valor reconhecido</string>
+
+</resources>
