@@ -7,5 +7,6 @@
     <string name="botao_forma_matricial">Forma matricial</string>
     <string name="botao_reconhecer">Reconhecer</string>
     <string name="texto_valor_reconhecido">Valor reconhecido</string>
+    <string name="texto_progresso_carga_rna">Carregando RNA:</string>
 
 </resources>

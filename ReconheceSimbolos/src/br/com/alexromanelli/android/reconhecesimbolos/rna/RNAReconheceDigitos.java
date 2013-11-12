@@ -53,10 +53,10 @@ public class RNAReconheceDigitos {
 	 */
 	private Neuronio[][] rna;
 	
-	private Context ctx;
+	private EntradaDigito ctx;
 
 	public RNAReconheceDigitos(Context ctx, OpcaoInicializacaoDePesos opcao) throws IOException {
-		this.ctx = ctx;
+		this.ctx = (EntradaDigito) ctx;
 		carregarPesos(opcao);
 	}
 	
@@ -209,81 +209,144 @@ public class RNAReconheceDigitos {
 	 * @author alexandre
 	 *
 	 */
-	private class LeitorArquivoRNA extends AsyncTask<Void, Void, Void> {
+	private class LeitorArquivoRNA extends AsyncTask<Void, Integer, Void> {
+		
 		@Override
 		protected Void doInBackground(Void... arg0) {
 			try {
+				requisitarExibicaoBarraProgressoCargaRna();
 				carregarRnaDeArquivo();
-				handler.post(new Runnable() {
-					@Override
-					public void run() {
-						Toast.makeText(ctx, "RNA pronta!", Toast.LENGTH_LONG).show();
-						((EntradaDigito)ctx).habilitaBotaoReconhecer();
-					}
-				});
-				
 			} catch (IOException e) {
-				handler.post(new Runnable() {
-					@Override
-					public void run() {
-						Toast.makeText(ctx, "Ocorreu algum erro ao carregar RNA. Conserta!", Toast.LENGTH_LONG).show();
-					}
-				});
+				this.cancel(true);
 			}
 			return null;
 		}
-	}
 
-	/**
-	 * Faz a carga de uma RNA de um arquivo texto. O arquivo deve ter sido criado com a mesma formatação
-	 * usada pelo método "salvaConfiguracaoRNA".<br/>
-	 * <br/>
-	 * Este método realiza a leitura dos parâmetros de configuração do arquivo informado no construtor,
-	 * inicializa o vetor de RNA, organiza a estrutura de interconexões de neurônios e carrega os pesos
-	 * destas.<br/>
-	 * <br/>
-	 * Inclui, ao término, uma chamada à coleta de lixo.
-	 *  
-	 * @throws IOException Caso ocorra algum erro na leitura do arquivo, uma exceção é lançada.
-	 */
-	private void carregarRnaDeArquivo() throws IOException {
-		BufferedReader config = new BufferedReader(new InputStreamReader(ctx.getAssets().open("rna.config")));
-		
-		config.readLine(); // [neuronios de entrada]
-		int qtdeNeuroniosEntrada = Integer.parseInt(config.readLine());
-		config.readLine(); // [camadas ocultas]
-		int qtdeCamadasOcultas = Integer.parseInt(config.readLine());
-		config.readLine(); // [neuronios por camada oculta]
-		int qtdeNeuroniosCamadaOculta = Integer.parseInt(config.readLine());
-		config.readLine(); // [neuronios de saida]
-		int qtdeNeuroniosSaida = Integer.parseInt(config.readLine());
-		config.readLine(); // [conexoes entre neuronios]
+		@Override
+		protected void onCancelled() {
+			requisitarAvisoCancelamentoCargaRna();
+		}
 
-		Quantidades.setNeuroniosDeEntrada(qtdeNeuroniosEntrada);
-		Quantidades.setNeuroniosDeSaida(qtdeNeuroniosSaida);
-		Quantidades.setCamadasOcultas(qtdeCamadasOcultas);
-		Quantidades.setNeuroniosDeCamadaOculta(qtdeNeuroniosCamadaOculta);
-		
-		inicializaVetorRna();
-		organizaEstruturaRna();
-		
-		int qtdeConexoes = qtdeNeuroniosEntrada * qtdeNeuroniosCamadaOculta +
-				(qtdeCamadasOcultas - 1) * qtdeNeuroniosCamadaOculta * qtdeNeuroniosCamadaOculta +
-				qtdeNeuroniosCamadaOculta * qtdeNeuroniosSaida;
-		for (int i = 0; i < qtdeConexoes; i++) {
-			String[] valores = config.readLine().split(" ");
-			int camadaOrigem = Integer.parseInt(valores[0]);
-			int indOrigem = Integer.parseInt(valores[1]);
-			//int camadaDestino = Integer.parseInt(valores[2]);
-			int indDestino = Integer.parseInt(valores[3]);
-			double peso = Double.parseDouble(valores[4]);
+		@Override
+		protected void onPostExecute(Void result) {
+			requisitarHabilitacaoBotaoReconhecer();
+			requisitarExibicaoMensagemConclusaoCargaRna();
+		}
+
+		@Override
+		protected void onProgressUpdate(Integer... values) {
+			int progresso = values[0];
+			requisitarAtualizacaoProgressoCargaRna(progresso);
+		}
+
+		/**
+		 * Faz a carga de uma RNA de um arquivo texto. O arquivo deve ter sido criado com a mesma formatação
+		 * usada pelo método "salvaConfiguracaoRNA".<br/>
+		 * <br/>
+		 * Este método realiza a leitura dos parâmetros de configuração do arquivo informado no construtor,
+		 * inicializa o vetor de RNA, organiza a estrutura de interconexões de neurônios e carrega os pesos
+		 * destas.<br/>
+		 * <br/>
+		 * Inclui, ao término, uma chamada à coleta de lixo.
+		 *  
+		 * @throws IOException Caso ocorra algum erro na leitura do arquivo, uma exceção é lançada.
+		 */
+		private void carregarRnaDeArquivo() throws IOException {
+			BufferedReader config = new BufferedReader(new InputStreamReader(ctx.getAssets().open("rna.config.ne784.co1.nco100.ns10.ta10")));
 			
-			rna[camadaOrigem][indOrigem].getConexoesSaida().get(indDestino).setPeso(peso);
+			config.readLine(); // [neuronios de entrada]
+			int qtdeNeuroniosEntrada = Integer.parseInt(config.readLine());
+			config.readLine(); // [camadas ocultas]
+			int qtdeCamadasOcultas = Integer.parseInt(config.readLine());
+			config.readLine(); // [neuronios por camada oculta]
+			int qtdeNeuroniosCamadaOculta = Integer.parseInt(config.readLine());
+			config.readLine(); // [neuronios de saida]
+			int qtdeNeuroniosSaida = Integer.parseInt(config.readLine());
+			config.readLine(); // [conexoes entre neuronios]
+
+			Quantidades.setNeuroniosDeEntrada(qtdeNeuroniosEntrada);
+			Quantidades.setNeuroniosDeSaida(qtdeNeuroniosSaida);
+			Quantidades.setCamadasOcultas(qtdeCamadasOcultas);
+			Quantidades.setNeuroniosDeCamadaOculta(qtdeNeuroniosCamadaOculta);
+			
+			inicializaVetorRna();
+			organizaEstruturaRna();
+			
+			int qtdeConexoes = qtdeNeuroniosEntrada * qtdeNeuroniosCamadaOculta +
+					(qtdeCamadasOcultas - 1) * qtdeNeuroniosCamadaOculta * qtdeNeuroniosCamadaOculta +
+					qtdeNeuroniosCamadaOculta * qtdeNeuroniosSaida;
+			
+			int percentualConcluido = 0;
+			
+			for (int i = 0; i < qtdeConexoes; i++) {
+				String[] valores = config.readLine().split(" ");
+				int camadaOrigem = Integer.parseInt(valores[0]);
+				int indOrigem = Integer.parseInt(valores[1]);
+				//int camadaDestino = Integer.parseInt(valores[2]);
+				int indDestino = Integer.parseInt(valores[3]);
+				double peso = Double.parseDouble(valores[4]);
+				
+				rna[camadaOrigem][indOrigem].getConexoesSaida().get(indDestino).setPeso(peso);
+				
+				// ajusta exibição progresso
+				percentualConcluido = (int)Math.round(i * 100.0 / qtdeConexoes);
+				if (percentualConcluido % 4 == 0)
+					publishProgress(percentualConcluido);
+			}
+			
+			config.close();
+			
+			System.gc();
 		}
 		
-		config.close();
+		private void requisitarExibicaoBarraProgressoCargaRna() {
+			handler.post(new Runnable() {
+				@Override
+				public void run() {
+					ctx.exibeProgressoCargaRNA();
+				}
+			});
+		}
 		
-		System.gc();
+		private void requisitarHabilitacaoBotaoReconhecer() {
+			handler.post(new Runnable() {
+				@Override
+				public void run() {
+					ctx.habilitaBotaoReconhecer();
+				}
+			});
+		}
+
+		private void requisitarAvisoCancelamentoCargaRna() {
+			handler.post(new Runnable() {
+				@Override
+				public void run() {
+					ctx.ocultaProgressoCargaRNA();
+					ctx.desabilitaBotaoReconhecer();
+					Toast.makeText(ctx, "Ocorreu algum erro ao carregar RNA. Chupa essa manga!", Toast.LENGTH_LONG).show();
+				}
+			});
+		}
+		
+		private void requisitarExibicaoMensagemConclusaoCargaRna() {
+			handler.post(new Runnable() {
+				@Override
+				public void run() {
+					ctx.ocultaProgressoCargaRNA();
+					Toast.makeText(ctx, "RNA pronta!", Toast.LENGTH_LONG).show();
+				}
+			});
+		}
+
+		private void requisitarAtualizacaoProgressoCargaRna(final int progresso) {
+			handler.post(new Runnable() {
+				@Override
+				public void run() {
+					ctx.atualizaProgressoCargaRna(progresso);
+				}
+			});
+		}
+
 	}
 
 }
