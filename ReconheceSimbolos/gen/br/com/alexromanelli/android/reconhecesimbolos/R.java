@@ -24,12 +24,14 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080005;
+        public static final int action_settings=0x7f080007;
         public static final int buttonDesenhar=0x7f080001;
         public static final int buttonFormaMatricial=0x7f080002;
         public static final int buttonReconhecer=0x7f080003;
         public static final int editTextValorReconhecido=0x7f080004;
         public static final int groupviewDraw=0x7f080000;
+        public static final int llCargaRNA=0x7f080005;
+        public static final int pbCargaRNA=0x7f080006;
     }
     public static final class layout {
         public static final int activity_entrada_digito=0x7f030000;
@@ -43,6 +45,7 @@ public final class R {
         public static final int botao_desenhar=0x7f050002;
         public static final int botao_forma_matricial=0x7f050003;
         public static final int botao_reconhecer=0x7f050004;
+        public static final int texto_progresso_carga_rna=0x7f050006;
         public static final int texto_valor_reconhecido=0x7f050005;
     }
     public static final class style {

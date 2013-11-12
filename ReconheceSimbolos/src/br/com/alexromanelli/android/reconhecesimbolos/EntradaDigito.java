@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 public class EntradaDigito extends Activity {
     private DrawView drawView;
@@ -91,6 +92,11 @@ public class EntradaDigito extends Activity {
 		bReconhecer.setEnabled(true);
     }
     
+	public void desabilitaBotaoReconhecer() {
+		Button bReconhecer = (Button)findViewById(R.id.buttonReconhecer);
+		bReconhecer.setEnabled(false);
+	}
+
 	protected void executaReconhecimento() {
     	int[][] m = drawView.getMatrizSimbolo();
     	int[][] matrizFigura = new int[28][28];
@@ -105,6 +111,21 @@ public class EntradaDigito extends Activity {
     	
     	EditText editValorReconhecido = (EditText)findViewById(R.id.editTextValorReconhecido);
     	editValorReconhecido.setText(Integer.toString(rna.interpretaSaida()));
+	}
+
+	public void exibeProgressoCargaRNA() {
+		LinearLayout llCargaRna = (LinearLayout)findViewById(R.id.llCargaRNA);
+		llCargaRna.setVisibility(View.VISIBLE);
+	}
+
+	public void ocultaProgressoCargaRNA() {
+		LinearLayout llCargaRna = (LinearLayout)findViewById(R.id.llCargaRNA);
+		llCargaRna.setVisibility(View.GONE);
+	}
+
+	public void atualizaProgressoCargaRna(int progresso) {
+		ProgressBar pCargaRna = (ProgressBar)findViewById(R.id.pbCargaRNA);
+		pCargaRna.setProgress(progresso);
 	}
 
 }
