@@ -74,7 +74,6 @@ public class RegraClassica implements RegraDoJogo {
             return ResultadoPartida.VitoriaIndividual;
         }
 
-        // TODO verificar o motivo de declarar empate incorretamente. (será que é por causa do "getJogadasValidas()" estar com tamanho zero?)
         vencedor.add(jogador1);
         vencedor.add(jogador2);
 		return ResultadoPartida.Empate;

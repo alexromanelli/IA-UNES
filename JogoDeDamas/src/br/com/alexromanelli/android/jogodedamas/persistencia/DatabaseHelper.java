@@ -127,7 +127,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     
     public SnapshotPartida leRegistroDePartidaInterrompida(long id) {
-        // TODO implementar leitura de registro completo (partida + peças + movimentos)
         PartidaInterrompida registroPartida = null;
         ArrayList<PecaPartidaInterrompida> listaDePecas;
         ArrayList<String> historicoDeMovimentos;

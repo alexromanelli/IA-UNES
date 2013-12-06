@@ -458,7 +458,7 @@ public class MainActivity extends Activity {
 
     private void executaExibirSobre() {
         // TODO implementar a exibição de tela de informação sobre o aplicativo
-        
+        Toast.makeText(this, "Desculpe-me. Ainda não sei fazer isto.", Toast.LENGTH_LONG).show();
     }
 
     private void executaSair() {

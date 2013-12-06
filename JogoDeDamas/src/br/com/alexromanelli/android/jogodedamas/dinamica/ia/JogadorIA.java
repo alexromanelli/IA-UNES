@@ -148,8 +148,6 @@ public class JogadorIA {
      */
     private Jogada buscaAlfaBeta(int profundidadeBusca) {
 
-        // Log.e("buscaAlfaBeta", "Não é erro! Iniciando configuração de busca.");
-
         Jogada melhorJogada = null;
 
         ConjuntoJogador pecasBrancas = Partida.getInstancia().getPecasBrancas();
@@ -165,20 +163,13 @@ public class JogadorIA {
                 contMovEmEstadoDeEmpateEm5, estadoDeEmpateEm5);
 
         ArrayList<Cenario> sucessores = atual.getListaSucessores();
-        //if (sucessores == null)
-        //    Log.e("buscaAlfaBeta", "Lista de sucessores é nula.");
-        //if (sucessores != null && sucessores.size() == 0)
-        //    Log.e("buscaAlfaBeta", "Lista de sucessores é vazia.");
 
         if (sucessores != null && sucessores.size() > 0)
             melhorJogada = sucessores.get(0).getOrigem();
 
-        // Log.e("buscaAlfaBeta", "Não é erro! Passando para busca MiniMax em ramificações.");
-
         double max = -Double.MAX_VALUE;
         if (sucessores.size() > 1)
             for (Cenario s : sucessores) {
-                // TODO verificar: não seria valorMin, já que se trata de um movimento de brancas partindo de s?
                 double v = valorMax(s, -Double.MAX_VALUE, Double.MAX_VALUE, 1, profundidadeBusca);
 
                 if (v > max) {
@@ -186,8 +177,6 @@ public class JogadorIA {
                     melhorJogada = s.getOrigem();
                 }
             }
-
-        // Log.e("buscaAlfaBeta", "Não é erro! Melhor jogada encontrada.");
 
         return melhorJogada;
     }
@@ -203,8 +192,6 @@ public class JogadorIA {
 
     private double valorMax(Cenario estado, double alfa, double beta, int nivel, int profundidadeBusca) {
 
-        // Log.e("valorMax", "Não é erro! Nível de busca: " + nivel + ".");
-
         // calcula o máximo valor de utilidade obtido de um cenário
         if (isTesteTerminal(estado, nivel, profundidadeBusca))
             return funcaoUtilidade(estado);
@@ -217,16 +204,11 @@ public class JogadorIA {
             alfa = Math.max(alfa, v);
         }
 
-        // Log.e("valorMax", "Não é erro! Máximo encontrado para o nível " + nivel + ": " + v + ".");
-
         return v;
     }
 
     private double valorMin(Cenario estado, double alfa, double beta, int nivel, int profundidadeBusca) {
 
-        // Log.e("valorMin", "Não é erro! Nível de busca: " + nivel + ".");
-
-        // TODO implementar função que calcula o mínimo valor de utilidade obtido de um cenário
         if (isTesteTerminal(estado, nivel, profundidadeBusca))
             return funcaoUtilidade(estado);
 
@@ -237,8 +219,6 @@ public class JogadorIA {
                 return v;
             beta = Math.min(beta, v);
         }
-
-        // Log.e("valorMin", "Não é erro! Mínimo encontrado para o nível " + nivel + ": " + v + ".");
 
         return v;
     }
@@ -288,7 +268,7 @@ class Cenario {
             aplicaJogadaOrigem();
 
         String estadoJogo = tabuleiro.getRepresentacaoTexto();
-        Log.e("Cenário", estadoJogo);
+        Log.i("JogoDeDamas-Cenário", estadoJogo);
 
         this.regra = new RegraClassica(contMovSucDeDamasSemDominacao, estadoDeEmpateEm5,
                 contMovEmEstadoDeEmpateEm5);
@@ -356,8 +336,6 @@ class Cenario {
             }
         }
 
-        // Log.e("getListaSucessores", "Não é erro! Lista de sucessores gerada.");
-
         return sucessores;
     }
 
@@ -395,8 +373,6 @@ class Cenario {
                 jogadas.addAll(peca.getJogadasValidas());
             }
         }
-
-        // Log.e("identificaJogadasValidas", "Não é erro! Jogadas válidas identificadas.");
 
         return jogadas;
     }
@@ -449,8 +425,6 @@ class Cenario {
         // bônus pela iminência de coroação (mudança de estado para dama)
         utilidade -= pontosPorCoroacoesIminentes(pecasBrancas);
         utilidade += pontosPorCoroacoesIminentes(pecasPretas);
-
-        // Log.e("computaFuncaoDeUtilidade", "Não é erro! Função de utilidade calculada em " + utilidade + ".");
 
         return utilidade;
     }
@@ -526,10 +500,6 @@ class Cenario {
         for (Peca p : pecas.getConjuntoPecas())
             if (p.getEstado() == Peca.EstadoPeca.Pedra) {
                 Casa c = p.getLocalizacao();
-                Casa vNE = c.getVizinhaNordeste();
-                Casa vSE = c.getVizinhaSudeste();
-                Casa vSO = c.getVizinhaSudoeste();
-                Casa vNO = c.getVizinhaNoroeste();
 
                 // condição para possível coroação na próxima jogada
                 boolean cond1 = ((pecas.getBaseJogador() == ConjuntoJogador.BaseJogador.Alto &&
@@ -580,8 +550,6 @@ class Cenario {
         // posição atual está livre para avanço
         Casa vizAdLeste = c.getVizinhaDirecao(adiante[0]);
         Casa vizAdOeste = c.getVizinhaDirecao(adiante[1]);
-        Casa vizTrLeste = c.getVizinhaDirecao(paraTras[0]);
-        Casa vizTrOeste = c.getVizinhaDirecao(paraTras[1]);
 
         if ((vizAdLeste == null || (vizAdLeste != null && isAvancoLivre(p, vizAdLeste, base))) &&
                 (vizAdOeste == null || (vizAdOeste != null && isAvancoLivre(p, vizAdOeste, base))))
