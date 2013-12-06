@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/home/alexandre/git/IA-UNES/JogoDeDamas/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/home/alexandre/git/IA-UNES/JogoDeDamas/build-types/debug/assets" />
+    </dataSet>
+
+</merger>

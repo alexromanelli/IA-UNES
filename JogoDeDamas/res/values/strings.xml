@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Jogo de Damas</string>
+    <string name="action_iniciar">Nova partida</string>
+    <string name="action_salvar">Interromper partida</string>
+    <string name="action_reiniciar">Reiniciar partida</string>
+    <string name="action_retomar">Retomar partida interrompida</string>
+    <string name="action_relatar_erro">Relatar erro</string>
+    <string name="action_sobre">Sobre</string>
+    <string name="action_sair">Sair</string>
+    
+    <string name="action_confirma_retomar">Retomar</string>
+    <string name="action_exclui_partida">Excluir</string>
+    <string name="action_cancela_retomar">Cancelar</string>
+    
+    <string-array name="array_opcao_adversario">
+        <item>Humano local</item>
+        <item>IA</item>
+        <item>Dispositivo remoto</item>
+    </string-array>
+
+    <string-array name="array_opcao_tempo">
+        <item>Relâmpago 5x5</item>
+		<item>Curto 15x15</item>
+		<item>Médio 30x30</item>
+		<item>Normal 45x45</item>
+		<item>Ilimitado</item>
+    </string-array>
+
+    <string-array name="array_opcao_dificuldade">
+        <item>Fácil</item>
+        <item>Médio</item>
+        <item>Difícil</item>
+    </string-array>
+
+</resources>

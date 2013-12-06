@@ -1,0 +1,21 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1386208305000 10799 c0994b2d159de4996b02db3e14c8b5a02a79b885 /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/view/TabuleiroDamaView.java
+1385492162000 1746 46774a8d50aef5ced4b18da54a4f36b7087f1555 /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/dinamica/Jogada.java
+1386210386000 2743 86894181aff1111545cbe8bb4317364a85dac1e1 /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/dinamica/Tabuleiro.java
+1386296482000 27446 91bb40279c4d87f332bac8b96f10f51b54435d06 /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/MainActivity.java
+1386295661000 21660 b5387c7a0486822492231ecb6997925118194b7a /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/dinamica/RegraClassica.java
+1385755701000 13048 46fd13e941aacd90a3b8247fc3c1ec06897d0640 /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/persistencia/DatabaseHelper.java
+1385605900000 1367 2ae23bcb77f4a1d6692678fa8138768ee259c10c /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/persistencia/SnapshotPartida.java
+1385780836000 1968 473919a7b692c458c887eec1d2415dfff726941b /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/dinamica/RegraDoJogo.java
+1385681058000 3560 3c5b7cec3be8ee12629e81260147fd4125121ada /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/persistencia/PecaPartidaInterrompida.java
+1385921448000 5429 e992820a0e81e0a0ce633fdbe31ce4feb4a65daf /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/dinamica/Peca.java
+1386296276000 25383 a506f668aa766b2f95ac118eca3c5a3e94974630 /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/dinamica/ia/JogadorIA.java
+1385947814000 1800 4f2c70b52584e9d15df637cd8477d57f5b8e02cb /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/dinamica/ConjuntoJogador.java
+1386296305000 17022 201cd4c88dc01d095c480deb19bc02a617ea5373 /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/dinamica/Partida.java
+1385690325000 2527 4f14d4bef4e991ace9607a99079c2a528ca31f53 /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/persistencia/MovimentoPartidaInterrompida.java
+1385747983000 7958 aa6216106ec7a10b503900986cf0255ed0bbf44c /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/persistencia/PartidaInterrompida.java
+1386299738000 7530 5bca0b320025cbb54ce7f9d9d20d6d98635c5e51 /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/view/AtividadeRetomarJogo.java
+1385492162000 2475 694bcba3952370195bbf9cb3cbed11ebd8351685 /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/dinamica/Casa.java
+1385755825000 3118 fdaa15ccc62403948a0bc606f6401c0f81c05ce9 /home/alexandre/git/IA-UNES/JogoDeDamas/src/br/com/alexromanelli/android/jogodedamas/dinamica/Relogio.java

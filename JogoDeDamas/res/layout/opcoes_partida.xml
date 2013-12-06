@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp" >
+    <TableRow>
+        <TextView 
+            android:text="Adversário:"/>
+        <Spinner 
+            android:id="@+id/spinnerOpcaoAdversario"
+            android:entries="@array/array_opcao_adversario"/>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/rowOpcaoDificuldade"
+        android:visibility="gone" >
+        <TextView
+            android:text="Dificuldade:"/>
+        <Spinner
+            android:id="@+id/spinnerOpcaoDificuldade"
+            android:entries="@array/array_opcao_dificuldade"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView 
+            android:text="Tempo de partida:" />
+        <Spinner
+            android:id="@+id/spinnerOpcaoTempo"
+            android:entries="@array/array_opcao_tempo" />
+    </TableRow>
+    
+    <TableRow>
+        <TextView 
+            android:text="Operações desfazer por jogador:" />
+        <EditText
+            android:id="@+id/editNumDesfazer"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="0" />
+    </TableRow>
+
+</TableLayout>

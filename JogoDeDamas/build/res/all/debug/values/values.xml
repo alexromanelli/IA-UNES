@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/home/alexandre/git/IA-UNES/JogoDeDamas/res/values/strings.xml -->
+    <eat-comment />
+
+    <string-array name="array_opcao_adversario">
+        <item>Humano local</item>
+        <item>IA</item>
+        <item>Dispositivo remoto</item>
+    </string-array>
+    <string-array name="array_opcao_dificuldade">
+        <item>Fácil</item>
+        <item>Médio</item>
+        <item>Difícil</item>
+    </string-array>
+    <string-array name="array_opcao_tempo">
+        <item>Relâmpago 5x5</item>
+        <item>Curto 15x15</item>
+        <item>Médio 30x30</item>
+        <item>Normal 45x45</item>
+        <item>Ilimitado</item>
+    </string-array>
+    <!-- From: file:/home/alexandre/git/IA-UNES/JogoDeDamas/res/values/dimens.xml -->
+    <eat-comment />
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- From: file:/home/alexandre/git/IA-UNES/JogoDeDamas/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="action_cancela_retomar">Cancelar</string>
+    <string name="action_confirma_retomar">Retomar</string>
+    <string name="action_exclui_partida">Excluir</string>
+    <string name="action_iniciar">Nova partida</string>
+    <string name="action_reiniciar">Reiniciar partida</string>
+    <string name="action_relatar_erro">Relatar erro</string>
+    <string name="action_retomar">Retomar partida interrompida</string>
+    <string name="action_sair">Sair</string>
+    <string name="action_salvar">Interromper partida</string>
+    <string name="action_sobre">Sobre</string>
+    <string name="app_name">Jogo de Damas</string>
+    <!-- From: file:/home/alexandre/git/IA-UNES/JogoDeDamas/res/values/styles.xml -->
+    <eat-comment />
+
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+</resources>

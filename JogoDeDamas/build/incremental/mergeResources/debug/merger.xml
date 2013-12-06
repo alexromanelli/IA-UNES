@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/home/alexandre/git/IA-UNES/JogoDeDamas/res" >
+            <file
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/values/strings.xml"
+                qualifiers="" >
+                <string name="action_sobre" >Sobre
+                </string>
+                <string name="action_confirma_retomar" >Retomar
+                </string>
+
+                <string-array name="array_opcao_tempo" >
+                    <item>
+Relâmpago 5x5
+                    </item>
+                    <item>
+Curto 15x15
+                    </item>
+                    <item>
+Médio 30x30
+                    </item>
+                    <item>
+Normal 45x45
+                    </item>
+                    <item>
+Ilimitado
+                    </item>
+                </string-array>
+                <string-array name="array_opcao_dificuldade" >
+                    <item>
+Fácil
+                    </item>
+                    <item>
+Médio
+                    </item>
+                    <item>
+Difícil
+                    </item>
+                </string-array>
+
+                <string name="action_retomar" >Retomar partida interrompida
+                </string>
+                <string name="action_iniciar" >Nova partida
+                </string>
+                <string name="action_exclui_partida" >Excluir
+                </string>
+                <string name="action_cancela_retomar" >Cancelar
+                </string>
+                <string name="app_name" >Jogo de Damas
+                </string>
+                <string name="action_reiniciar" >Reiniciar partida
+                </string>
+                <string name="action_sair" >Sair
+                </string>
+                <string name="action_salvar" >Interromper partida
+                </string>
+
+                <string-array name="array_opcao_adversario" >
+                    <item>
+Humano local
+                    </item>
+                    <item>
+IA
+                    </item>
+                    <item>
+Dispositivo remoto
+                    </item>
+                </string-array>
+
+                <string name="action_relatar_erro" >Relatar erro
+                </string>
+            </file>
+            <file
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/values/styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+            </file>
+            <file
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/values/dimens.xml"
+                qualifiers="" >
+                <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
+            </file>
+            <file
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/values-v11/styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                name="ic_launcher_damas"
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/drawable-xhdpi/ic_launcher_damas.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/drawable-xhdpi/ic_launcher.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="salvar_partida"
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/layout/salvar_partida.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="item_historico"
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/layout/item_historico.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="item_partida_salva"
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/layout/item_partida_salva.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="opcoes_partida"
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/layout/opcoes_partida.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_main"
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/layout/activity_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="retomar_partida"
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/layout/retomar_partida.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="ic_launcher_damas"
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/drawable-hdpi/ic_launcher_damas.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/drawable-hdpi/ic_launcher.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher_damas"
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/drawable-mdpi/ic_launcher_damas.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/drawable-mdpi/ic_launcher.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/values-v14/styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/values-sw720dp-land/dimens.xml"
+                qualifiers="sw720dp-land" >
+                <dimen name="activity_horizontal_margin" >128dp
+                </dimen>
+            </file>
+            <file
+                name="menu_retomar_partida"
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/menu/menu_retomar_partida.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="main"
+                path="/home/alexandre/git/IA-UNES/JogoDeDamas/res/menu/main.xml"
+                qualifiers=""
+                type="menu" />
+        </source>
+        <source path="/home/alexandre/git/IA-UNES/JogoDeDamas/build/res/rs/debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/home/alexandre/git/IA-UNES/JogoDeDamas/build-types/debug/res" />
+    </dataSet>
+
+</merger>

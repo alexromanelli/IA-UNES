@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TableRow >
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Iniciais jogador peças brancas:" />
+        <EditText 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"
+            android:id="@+id/editIniciaisBrancas" />
+    </TableRow>
+
+    <TableRow >
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Iniciais jogador peças pretas" />
+        <EditText 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"
+            android:id="@+id/editIniciaisPretas" />
+    </TableRow>
+
+</TableLayout>
+<!-- From: file:/home/alexandre/git/IA-UNES/JogoDeDamas/res/layout/salvar_partida.xml -->

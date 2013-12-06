@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item 
+        android:id="@+id/confirmaRetomarPartida"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_confirma_retomar" />
+
+    <item 
+        android:id="@+id/excluiPartidaSalva"
+        android:orderInCategory="200"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_exclui_partida" />
+    
+    <item 
+        android:id="@+id/cancelaRetomarPartida"
+        android:orderInCategory="300"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_cancela_retomar" />
+
+</menu>
